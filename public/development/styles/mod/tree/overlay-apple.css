@@ -1,0 +1,21 @@
+
+.apple_overlay {
+	
+	
+	display:none;
+	
+	
+	
+	
+	width:960px; 	
+	
+	
+		
+}
+.apple_overlay .close {
+	background-image:url(images/close.png);
+	position:absolute; right:-18px; top:-18px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}

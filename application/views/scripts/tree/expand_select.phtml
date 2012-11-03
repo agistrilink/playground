@@ -1,0 +1,12 @@
+<div id='<?php echo $this->id ?>' name='<?php echo $this->name ?>'>
+	<select name='nodes'>
+		<?php foreach ($this->nodes as $id => $name):?>
+			<option value='<?php echo $id ?>'><?php echo $name ?></option>
+		<?php endforeach;?>
+	</select>
+	<select name='leaves'>
+		<?php foreach ($this->leaves as $name):?>
+			<option value='<?php echo $id ?>'><?php echo $name ?></option>
+		<?php endforeach;?>
+	</select>
+</div>

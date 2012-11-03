@@ -1,0 +1,12 @@
+<div node_id='<?php echo $this->node_id ?>' name='<?php echo $this->name ?>'>
+	<ul class='child_node_ref_list'>
+		<?php foreach ($this->nodes as $node_id => $name):?>
+			<li node_id='<?php echo $node_id ?>'><a href='#'><?php echo $name ?></a></li>
+		<?php endforeach;?>
+	</ul>
+	<ul class='leaf_ref_list'>
+		<?php foreach ($this->leaves as $node_id => $name):?>
+			<li node_id='<?php echo $node_id ?>'><a href='#'><?php echo $name ?></a></li>
+		<?php endforeach;?>
+	</ul>
+</div>

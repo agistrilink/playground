@@ -1,0 +1,26 @@
+<?php
+?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+	<title>Playground</title>
+	<script src='http://requirejs.org/docs/release/0.15.0/minified/requireplugins-jquery-1.4.4.js'></script>
+	<script>
+		require({
+//				locale: "de-de",
+				baseUrl: '<?php echo $this->baseUrl().(APPLICATION_ENV=='development'?'/development':'') ?>/scripts'
+			},
+			['main_countdownOverlay']
+		);
+	</script>
+</head>
+<body>
+	<button name="click" class="i18n trigger_overlay countdown" rel="#overlay1"></button>
+	
+	<div id="overlay1" class="overlay countdown" style="display:none;">
+		<div class='countdown'></div>
+		<button name="close" class="i18n close"></button>
+	</div>	
+</body>
+</html>

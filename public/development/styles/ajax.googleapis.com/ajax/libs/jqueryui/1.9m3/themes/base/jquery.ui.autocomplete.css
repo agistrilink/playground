@@ -1,0 +1,3 @@
+
+.ui-autocomplete { position: absolute; cursor: default; }	
+* html .ui-autocomplete { width:1px; } 

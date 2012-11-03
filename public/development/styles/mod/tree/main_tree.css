@@ -1,0 +1,72 @@
+@CHARSET "UTF-8";
+body {
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	font-size: 62.5%;
+	
+	margin-top: 2em;
+	
+}
+.red {
+	background: red;
+}
+#library {
+	margin-top: 5px;
+}
+#path_wrapper {
+	margin-top:3px;
+}
+.path {
+	font-size: 100%;
+	z-index: 1;
+}
+.path .ui-button {
+	margin: 0 0;
+}
+.path .ui-button-set .ui-button-icon-only {
+	width: 24px;
+	height: 24px;
+}
+.path_elt {
+}
+.ui-menu {
+	width: 200px;
+	position: absolute;
+}
+#view, #view .folder, #view .cover {
+	float: left;
+}
+#path .ui-selectmenu-status {
+	display: none;
+}
+#path .ui-app-state-join-hover {
+	border: 1px solid #0b93d5;
+}
+#view {
+}
+.cover, .folder {
+	padding: 10px 0;
+	height: 150px;
+	cursor: pointer;
+}
+.folder .name {
+	text-align: center;
+}
+.centeredImage {
+	text-align:center;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding:0px;
+}
+#pf, #safa-ri {
+}
+#pf {
+	padding: 0.3em 0 0 0.5em;
+	font-size: 150%;
+	font-style: italic;
+}
+#safa-ri {
+	float:right;
+	text-align: right;
+	padding-right: 1em;
+	font-style: italic;
+}

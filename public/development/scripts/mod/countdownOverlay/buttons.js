@@ -1,0 +1,10 @@
+define(
+	["i18n!lang/nls/buttons"],
+	function(buttons){
+		$(document).ready(function(){
+			$("button.i18n").each(function(){
+				$(this).html(buttons[$(this).attr("name")])
+			})
+		})
+	}
+);
