@@ -1,4 +1,0 @@
-
-modules in zend
-models in zend
-favourites in cookies

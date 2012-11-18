@@ -1,19 +1,20 @@
 <?php
 
-class TreeController extends Zend_Controller_Action
+require_once 'BaseController.php';
+
+class TreeController extends BaseController
 {
-    public function init()
-    {
+    public function init() {
+    	parent::init();
+    	
         $this->view->addScriptPath(APPLICATION_PATH.'/views/scripts/tree');
     }
 
-    public function indexAction()
-    {    	
+    public function indexAction() {
     	$this->expandAction();
     }
 
-    public function expandAction()
-    {    	
+    public function expandAction() {    	
     	$this->view->node_id = $this->getRequest()->getParam('node_id', '/');
     	$this->view->name = $this->view->node_id == '/'?'/':basename($this->view->node_id);
     	
@@ -30,6 +31,10 @@ class TreeController extends Zend_Controller_Action
 			else
     			$this->view->leafs[$id] = $name;
 		}
+    }
+    
+    public function menuAction() {
+    	
     }
 }
 
