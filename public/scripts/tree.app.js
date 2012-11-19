@@ -2,9 +2,10 @@
  * 
  */
 
-require(
-	['domReady!', 'mod/tree/main_tree'],
-	function(doc, tree) {
+define(
+	['jquery', 'mod/tree/main_tree'],
+	
+	function($, tree) {
 		tree.create();
 	}
 );

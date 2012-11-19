@@ -1,10 +1,16 @@
 define([
         'jquery',
+        'mod/tree/path/selector',
 	 	'jqueryui/button',
 	 	'jqueryui/position',
-	 	'jqueryui/menu'
+	 	'jqueryui/menu',
+	 	'utils/jquery.debug'
 	],
-	function($) {
+	function($/*, Selector*/) {
+//		var Selector = require('mod/tree/path/selector');
+//		var jqPathWrapper = Selector.getPathWrapper();
+//		jqPathWrapper.alert();
+		
 		$('.menu > button')
 			.live('mouseover', function(event){
 				var juiMenuButton = $(this);
@@ -87,13 +93,15 @@ define([
 								;
 						}
 					})
+/*
 					.popup({
 //						options: {
-						accept: function(a, b){alert('boe');},
+						accept: function(a, b){alert('boe2');},
 						activeClass: 'red'
 //						}
 					})
 //					.option('accept', function(a, b){alert('boe');})
+*/
 					;
 				
 				return jqMenu;

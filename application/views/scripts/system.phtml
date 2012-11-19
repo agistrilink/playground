@@ -1,0 +1,13 @@
+<div id='__system__'>
+	<ul id='__initial__' hidden='hidden'>
+		<?php
+			if (isset($this->initialPhtml))
+				echo $this->render($this->initialPhtml);
+		?>
+	</ul>
+	<div id='__tmp__'>
+		<div class='offscreen' style='position: absolute; left: -10000px;'></div>
+	</div>
+</div>
+
+

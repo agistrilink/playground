@@ -1,23 +1,30 @@
 define([
         'jquery',
+        'mod/tree/path/goodies',
 		'mod/tree/path/main_path',
-		'mod/tree/path/elt'  
+		'mod/tree/path/elt',
+		'utils/jquery.system',
+		'utils/jquery.debug'
 	],
-	function($, path, elt) {
+	function($, Goodies, Path, PathNode) {
 		return {
 			create: function() {
-alert('mod_main_tree');
-//*				
-				// create the path under the wrapper
-				var jqPath = path.create().appendTo($('#path_wrapper'));
+
+				
+				// create the goodies and the path under the wrapper
+				var jqPathWrapper = $('#path_wrapper');
+//				jqPathWrapper.append(Goodies.create());
+				var jqPath = Path.create().appendTo(jqPathWrapper);
+//				jqPathNode.alert();
 				
 				// append the initial result node that came from the server to the path as level 1
-				var jqNode = $('#__initial__ li[name=expand] > :first');
-				jqPath.trigger('append', [elt.create(jqNode, 1)]);
+				var jqInitialExpand = $.initial('[ajax=expand]');
+				var jqNode = jqInitialExpand.find('> :first');
+				var jqPathNode = PathNode.create(jqNode, 1);								
+				jqPath.trigger('append', [jqPathNode]);	
 				
 				// didge the initial result
-				jqNode.remove();
-//*/
+				jqInitialExpand.remove();
 			}
 		}
 	}

@@ -2,10 +2,11 @@ define([
         'jquery',
 	 	'mod/tree/path/goodies',
 	 	'mod/tree/path/elt',
-        'jqueryui/button' // as last item as it is not needed in the parameter list
+        'jqueryui/button', // as last item as it is not needed in the parameter list
+        'utils/jquery.debug'
 	],
 	function($, Goodies, PathNode) {
-//alert('mod_path_main_path');
+alert('mod_path_main_path');
 
 		// increase (e.g. 400) to have quicker overflow while testing, 0 otherwise
 		var padding = 400; 
@@ -40,7 +41,9 @@ define([
 			underflowing(jqPath);
 		}
 		
-		$('.path').live('jump', function(event, jqPathNode) {
+		var jqPathWrapper = $('#path_wrapper');
+		
+		jqPathWrapper.on('jump', '.path', function(event, jqPathNode) {
 			var jqPath = $(this);
 			
 			var selector = ':gt(' + jqPathNode.data('level') + ')';
@@ -48,7 +51,7 @@ define([
 			underflowing(jqPath);				
 		});
 		
-		$('.path').live('expand', function(event, node_id, level) {
+		jqPathWrapper.on('expand', '.path', function(event, node_id, level) {
 			var jqPath = $(this);
 			
 			var url = $(document).data('baseUrl') + '/tree/expand';
@@ -60,8 +63,10 @@ define([
 			return false;
 		});
 		
-		$('.path').live('append', function(event, jqPathNode) {
+		jqPathWrapper.on('append', '.path', function(event, jqPathNode) {
 			var jqPath = $(this);
+			jqPath.alert();
+		
 			var level = jqPathNode.data('level');
 			
 			// length includes 1 goodies node! no plus or minus one calculation
@@ -73,16 +78,17 @@ define([
 //				PathNode.destroy(jqPathNode.add(jqPathNode.nextAll()));
 			}
 			
-			overflowing(jqPath, jqPathNode.width());
+			// @todo
+//			overflowing(jqPath, jqPathNode.width());
 			jqPath.append(jqPathNode);
-			underflowing(jqPath);
-
+//			underflowing(jqPath);
+			
 			return false;
-		});			
+		});
 
 		return {
 			create: function() {
-				return $('<span class="path"></span>').append(Goodies.create());
+				return $('<span class="path"></span>');//.append(Goodies.create());
 			},
 			destroy: function(jqPath) {
 				Goodies.destroy(jqPath.find('.path_goodies'));
@@ -90,6 +96,9 @@ define([
 					PathNode.destroy($(this));
 				});
 				jqPath.remove();
+			},
+			getWrapper: function() {
+				return jqPathWrapper;
 			}
 		}
 	}

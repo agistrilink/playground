@@ -2,14 +2,22 @@
  * 
  */
 
-require(
-	['domReady!', 'jquery', 'jqueryui/menu', 'utils/jquery.debug'],
+define(
+	['jquery', 'jqueryui/menu', 'jqueryui/button', 'utils/jquery.debug'],
 	
-	function(doc, $) {
+	function($) {
+		$('.menu').on('click', function() {
+			$('#menu').show();
+		})
+		
+		$('#clickme').button();
+		
 		$('#menu').menu({
-			   select: function(event, ui) {
-				   $(ui.item).alert();
-			   }
-		});
+//			disabled: true,
+			select: function(event, ui) {
+//				$(ui.item).alert();
+				$(this).hide();
+			}
+		}).hide();
 	}
 );

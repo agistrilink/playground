@@ -1,7 +1,8 @@
 define([
         'jquery',
 	 	'mod/tree/path/button',
-	 	'mod/tree/path/menu'
+	 	'mod/tree/path/menu',
+	 	'utils/jquery.debug'
 	],
 	function($, NodeButton, ExpandMenu) {
 		return {
@@ -11,6 +12,7 @@ define([
 				
 				NodeButton.create(jqNode, level).appendTo(jqPathNode);
 				ExpandMenu.create(jqNode, level).appendTo(jqPathNode); // $() for leaf
+//				jqPathNode.alert();
 				/*
 				var jqMenu = ExpandMenu.create(jqNode, level);
 				if (jqMenu.length) jqMenu.appendTo(jqPathNode);

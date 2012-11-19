@@ -114,7 +114,7 @@ define([
 				
 				juiMenuList.menu('collapse');
 				
-				alert('boe');
+//				alert('boe');
 				
 				return jqMenu;
 			},

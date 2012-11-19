@@ -1,48 +1,16 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
 <head>
-	<meta http-equiv='content-type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='content-type' content='text/html; charset=UTF-8' />
 	<title>Playground</title>
 	<link rel='stylesheet' href='<?php echo $this->baseUrl ?>/public/styles/tree.app.css' />
-	<script src='http://requirejs.org/docs/release/2.1.1/comments/require.js'></script>
-	<script>
-		
-		requirejs.config({
-		    // hack for IE
-		    enforceDefine: true,
-		    
-			baseUrl: '<?php echo $this->baseUrl ?>/public/scripts',
-			
-		    paths: {
-		        'jquery': [
-		            'http://code.jquery.com/jquery-1.8.2.min',
-		            // local load fallback
-		            'lib/jquery/1.8.2/jquery.min.js'
-		        ],
-		        
-			     // see https://github.com/jrburke/jqueryui-amd/tree/latest
-			     // requires node.js to be installed to produce the amd version
-		        'jqueryui': 'lib/jqueryui/1.9.1-amd',
-		        
-		        // jquery alert
-		        'utils': 'lib/utils'     
-		    },
-//			locale: 'de-de'
-		});
-		
-		require(
-			['domReady!', 'jquery', 'tree.menu'],
-			
-			function(doc, $) {
-				alert('boe main');
-//				$(doc).data('baseUrl', '<?php echo $this->baseUrl ?>');
-//				$(doc).data('APPLICATION_ENV', '<?php echo APPLICATION_ENV ?>');
-			}
-		);
-		
-	</script>
+	<?php 
+		$this->jsMain = 'tree.menu';
+		echo $this->render('requirejs.phtml');
+	?>
 </head>
 <body>
+	<button id="clickme" class="menu">click me</button>
 	<ul id="menu">
 		<li><a href="#">Aberdeen</a></li>
 		<li><a href="#">Ada</a></li>

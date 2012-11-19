@@ -1,65 +1,13 @@
-<?php
-	$path = $this->baseUrl()
-?>
-<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
-<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
+<!DOCTYPE html>
+<html>
 <head>
-	<meta http-equiv='content-type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='content-type' content='text/html; charset=UTF-8' />
 	<title>Playground</title>
-	<link rel='stylesheet' href='<?php echo $path ?>/styles/tree.app.css' />
-<?php 
-	/*
-	 * Though 1.7.1 is the latest version of jQuery, the underlying jquery ui menu code
-	 * is based on jquery-ui-1.9m6, which uses 1.6.2. Though requiresjs-1.0.3 is compatible
-	 * with 1.7.1, it is assumed that it is also compatible with 1.6.2
-	 */
-?>
-	<script src='http://requirejs.org/docs/release/2.1.1/comments/require.js'></script>
-	
-<?php 
-	/*
-	 * 20111224
-	 * 
-	 * Note on the order.js plugin.
-	 * According to the web page: http://requirejs.org/docs/api.html#order
-	 * "...put it in the same directory as your app's main JS file"
-	 * 
-	 * A normal JavaScript include as shown below will not work.
-	 * 
-	 * In the application below, that means that order.js *HAS TO BE* sibling to tree.app.js
-	 * in the require.baseUrl directory.
-	 * 
-	 * One can extend the filename with version info, i.e. order.js has been renamed to order-1.0.0.min.js
-	 * being the current latest version.
-	 */
-?>
-<!--
-	<script src='http://requirejs.org/docs/release/1.0.0/minified/order.js'></script>
--->
-	<script>
-		requirejs.config({
-		    //To get timely, correct error triggers in IE, force a define/shim exports check.
-		    enforceDefine: true,
-			baseUrl: '<?php echo $path ?>/scripts',
-		    paths: {
-		        'jquery': [
-		            'http://code.jquery.com/jquery-1.8.2.min',
-		            //If the CDN location fails, load from this location
-		            'lib/jquery/1.8.2/jquery.min.js'
-		        ],
-		        'jqueryui': 'lib/jqueryui/1.9.1-amd'		        
-		    },
-//			locale: 'de-de'
-		});
-		require(
-			['domReady!', 'tree.app'],
-			function(doc) {
-				$(doc).data('baseUrl', '<?php echo $this->baseUrl() ?>');
-				$(doc).data('APPLICATION_ENV', '<?php echo APPLICATION_ENV ?>');
-				alert('boe');
-			}
-		);
-	</script>
+	<link rel='stylesheet' href='<?php echo $this->baseUrl ?>/public/styles/tree.app.css' />
+	<?php 
+		$this->jsMain = 'tree.app';
+		echo $this->render('requirejs.phtml');
+	?>
 </head>
 <body>
 	<div id='library' class='container_16 ui-widget'>
@@ -75,17 +23,9 @@
 		</div>
 		<div class='ui-helper-clearfix'></div>
 	</div>
-	<div id='__system__'>
-		<ul id='__initial__' style='display:none'>
-			<li name='expand'>
-				<?php echo $this->render('expand.phtml') ?>
-			</li>
-		</ul>
-		<div id='__tmp__'>
-			<div class='offscreen' style='position: absolute; left: -10000px;'></div>
-		</div>
-	</div>
+	<?php 
+		$this->initialPhtml = 'initialAjax.phtml';
+		echo $this->render('system.phtml');
+	?>
 </body>
-<script>//alert('boe2');
-</script>
 </html>
