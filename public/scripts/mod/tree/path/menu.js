@@ -1,18 +1,17 @@
 define([
         'jquery',
-        'mod/tree/path/selector',
 	 	'jqueryui/button',
 	 	'jqueryui/position',
 	 	'jqueryui/menu',
 	 	'utils/jquery.debug'
 	],
-	function($/*, Selector*/) {
+	function($) {
 //		var Selector = require('mod/tree/path/selector');
-//		var jqPathWrapper = Selector.getPathWrapper();
+//		var jqPathWrapper = $('#path_wrapper');
 //		jqPathWrapper.alert();
 		
-		$('.menu > button')
-			.live('mouseover', function(event){
+		$(document)
+			.on('mouseover', '.menu > button', function(event){
 				var juiMenuButton = $(this);
 				var juiMenuList = juiMenuButton.next();
 				var juiNodeButton = juiMenuButton.parents('.path_elt').find('.path_button');
@@ -22,7 +21,7 @@ define([
 				juiMenuButton.button('option', 'icons', {secondary:'ui-icon-triangle-1-se'});
 				juiNodeButton.trigger('mouseover_menu');
 			})
-			.live('mouseout', function(event){
+			.on('mouseout', '.menu > button', function(event){
 				var juiMenuButton = $(this);
 				var juiMenuList = juiMenuButton.next();
 				var juiNodeButton = juiMenuButton.parents('.path_elt').find('.path_button');
@@ -40,10 +39,10 @@ define([
 				// remove the highlight from the node button
 				juiNodeButton.trigger('mouseout_menu');
 			})
-			.live('mouseover_button', function(event){
+			.on('mouseover_button', '.menu > button', function(event){
 				$(this).removeClass('ui-state-default').addClass('ui-state-hover');
 			})
-			.live('mouseout_button', function(event){
+			.on('mouseout_button', '.menu > button', function(event){
 				$(this).removeClass('ui-state-hover').addClass('ui-state-default');
 			})
 			;
@@ -93,6 +92,7 @@ define([
 								;
 						}
 					})
+					.hide()
 /*
 					.popup({
 //						options: {

@@ -13,6 +13,6 @@ and http://www.requirejs.org/jqueryui-amd/example/webapp/app.html
 
 The conversion process transformed the following files:
 
-    jqueryui-1.8.14/ui/jquery.ui.?.js --> jqueryui-1.8.14/jqueryui/?.js
-    jqueryui-1.8.14/ui/jquery.effects.?.js --> jqueryui-1.8.14/jqueryui/effects/?.js
-    jqueryui-1.8.14/ui/i18n/jquery.ui.datepicker-?.js --> jqueryui-1.8.14/jqueryui/datepicker-?.js
+    jqueryui-1.9.1/ui/jquery.ui.?.js --> jqueryui-1.9.1/jqueryui/?.js
+    jqueryui-1.9.1/ui/jquery.effects.?.js --> jqueryui-1.9.1/jqueryui/effects-?.js
+    jqueryui-1.9.1/ui/i18n/jquery.ui.datepicker-?.js --> jqueryui-1.9.1/jqueryui/datepicker-?.js

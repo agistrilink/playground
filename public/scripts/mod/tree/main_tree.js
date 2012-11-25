@@ -1,31 +1,32 @@
 define([
         'jquery',
-        'mod/tree/path/goodies',
-		'mod/tree/path/main_path',
-		'mod/tree/path/elt',
-		'utils/jquery.system',
+		'mod/tree/path/item',
+		'utils/system',
 		'utils/jquery.debug'
 	],
-	function($, Goodies, Path, PathNode) {
+	function($, PathItem, System) {		
 		return {
 			create: function() {
-
-				
-				// create the goodies and the path under the wrapper
-				var jqPathWrapper = $('#path_wrapper');
-//				jqPathWrapper.append(Goodies.create());
-				var jqPath = Path.create().appendTo(jqPathWrapper);
-//				jqPathNode.alert();
-				
-				// append the initial result node that came from the server to the path as level 1
-				var jqInitialExpand = $.initial('[ajax=expand]');
-				var jqNode = jqInitialExpand.find('> :first');
-				var jqPathNode = PathNode.create(jqNode, 1);								
-				jqPath.trigger('append', [jqPathNode]);	
-				
-				// didge the initial result
-				jqInitialExpand.remove();
+				PathItem.expand(PathItem.root, System.initialAjax('expand'));
 			}
 		}
 	}
 );
+/*
+needs renaming:
+
+path_wrapper => #path
+path_item_list => list of path_item
+path_item => node, expand
+node
+expand => button, menu
+
+pathWrapper.js
+pathItemList.js
+pathItem.js
+pathItemNode.js
+pathItemExpand.js
+pathItemExpandButton.js
+pathItemExpandMenu.js
+
+*/

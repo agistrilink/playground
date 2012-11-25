@@ -5,6 +5,7 @@ define([
 	function($) {
 		// rename this to nodeButton - the name is better, i.e. path node makes more sense as path button
 	
+		// proposal 2: rename this to menu expand button + menu item list
 	
 		// http://jqueryui.com/docs/Theming/API
 		var uiStateJoinedHover = 
