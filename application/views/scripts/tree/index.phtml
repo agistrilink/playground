@@ -5,7 +5,9 @@
 	<title>Playground</title>
 	<link rel='stylesheet' href='<?php echo $this->baseUrl ?>/public/styles/tree.app.css' />
 	<?php 
-		$this->jsMain = 'tree.spine';
+		$this->jsMain = 'tree.backbone';
+//		$this->jsMain = 'tree.underscore';
+//		$this->jsMain = 'tree.spine';
 //		$this->jsMain = 'tree.prototype';
 		echo $this->render('requirejs.phtml');
 	?>
