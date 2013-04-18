@@ -1,0 +1,1 @@
+http://offshootinc.com/blog/2011/02/11/modul-bootstrapping-in-zend-framework/

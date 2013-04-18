@@ -2,7 +2,7 @@
 
 require_once('Config.php');
 
-class BaseController extends Zend_Controller_Action
+class Safa_Ri_Controller_BaseController extends Zend_Controller_Action
 {
 	public function init()
 	{

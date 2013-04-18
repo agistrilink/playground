@@ -2,12 +2,12 @@
 
 require_once 'BaseController.php';
 
-class TreeController extends Safa_Ri_Controller_BaseController
+class Tree_IndexController extends BaseController
 {
     public function init() {
     	parent::init();
     	
-        $this->view->addScriptPath(APPLICATION_PATH.'/views/scripts/tree');
+    	$this->view->addScriptPath(APPLICATION_PATH.'/modules/tree/views/scripts/index');
     }
 
     public function indexAction() {

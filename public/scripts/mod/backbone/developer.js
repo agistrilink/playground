@@ -5,8 +5,8 @@ define([
 
 		var Developer = Employee.extend({
 			initialize: function(attrs) {
+				attrs.dept = 'dev';
 				this.set(attrs);
-				this.set('dept', 'dev');
 			},
 			toString: function() {
 				return 'Project: ' + this.get('project') + ', ' + Developer.__super__.toString.call(this);

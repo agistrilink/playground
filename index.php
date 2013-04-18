@@ -14,7 +14,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
     realpath(APPLICATION_PATH . '/models'),
     realpath(APPLICATION_PATH . '/loaders'),
 	realpath(APPLICATION_PATH . '/../library'),
-    realpath(APPLICATION_PATH . '/../../lib/ZendFramework-1.12.0/library'), // sibling to workspace
+    realpath(APPLICATION_PATH . '/../../lib/ZendFramework-1.12.3-minimal/library'), // sibling to workspace
     get_include_path(),
 )));
 
