@@ -19,6 +19,6 @@ jquery 1.9.1, latest at 201304 - already amd'ed in release
 
 jquery ui 1.9.1-amd, based on see https://github.com/jrburke/jqueryui-amd/tree/latest
 
-backbone 0.9.2-amd +
-underscore 1.4.2-amd, amd'ed myself in 201212
+backbone 1.0.0-amd +
+underscore 1.4.4-amd, amd'ed myself in 201304
 

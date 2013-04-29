@@ -17,3 +17,6 @@ AMD'ing underscore-1.4.2
   // end of added
 
 test with e.g. alert(_.each([1, 2, 3], function(num){ alert(num); }););
+
+
+Same for 1.4.4 with NOTE agistrilink 20130428
