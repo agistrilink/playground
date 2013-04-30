@@ -13,7 +13,7 @@ underscore 1.4.4-amd
 
 zend 1.12.3, simply the latest at 201304
 
-requirejs 2.1.1, simply the latest at 201212
+requirejs 2.1.5, simply the latest at 201304
 
 jquery 1.9.1, latest at 201304 - already amd'ed in release
 
