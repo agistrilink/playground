@@ -13,10 +13,10 @@ define([
 			if (typeof(jqNode) != 'undefined')
 				return jqNextPathItem.append(PathItemExpand.create(jqNode));
 			
-			$.get(url, {}, function(rsp)) {
+			$.get(url, {}, function(rsp) {
 				var jqNode = $(rsp).find('> :first');
 				jqNextPathItem.append(PathItemExpand.create(jqNode));
-			}
+			});
 			
 			return jqNextPathItem;
 		}
@@ -26,7 +26,7 @@ define([
 		}
 
 		var PathItem = {
-			root: this.create($(), '/');
+			root: this.create($(), '/'),
 			create: function(jqPrev, name) {
 				jqPathItem = 
 					$('<span class="path_item"></span>')
@@ -65,7 +65,7 @@ define([
 			setExpand: function(jqPathItem, jqPathItemExpand) {
 				return jqPathItem.append(jqPathItemExpand);
 			}
-		}
+		};
 		
 		exports.expand = expand;
 		exports.parent = parent;
