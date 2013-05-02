@@ -33,7 +33,7 @@ class Tree_IndexController extends BaseController
 		}
     }
     
-    public function menuAction() {
+    public function bootstrapAction() {
     	
     }
 }

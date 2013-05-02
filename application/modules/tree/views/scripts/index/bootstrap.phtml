@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv='content-type' content='text/html; charset=UTF-8' />
+	<title>Playground</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="<?php echo $this->baseUrl ?>/public/scripts/lib/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<?php 
+		$this->jsMain = 'tree.bootstrap';
+		echo $this->render('requirejs.phtml');
+	?>
+</head>
+<body>
+<ul class="nav nav-pills">
+	<li class="dropdown all-camera-dropdown">
+	   <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+		Tutorials
+		   <b class="caret"></b>
+	   </a>
+		<ul class="dropdown-menu">
+				<li data-filter-camera-type="all"><a data-toggle="tab" href="#">HTML5</a></li>
+				<li data-filter-camera-type="Alpha"><a data-toggle="tab" href="#">PHP</a></li>
+				<li data-filter-camera-type="Zed"><a data-toggle="tab" href="#">MySQL</a></li>
+				<li data-filter-camera-type="Bravo"><a data-toggle="tab" href="#">JavaScript</a></li>
+	
+		 </ul>
+	</li>
+</ul>
+<div>
+	Hello Bootstrap!
+	</div>
+</body>
+</html>

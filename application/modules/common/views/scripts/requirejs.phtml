@@ -22,12 +22,23 @@
 			'underscore': 'lib/underscore/1.4.4-amd/underscore',
 
 			'backbone': 'lib/backbone/1.0.0-amd/backbone',
-				 
+
+			'bootstrap': 'lib/bootstrap/2.3.1/js/bootstrap',
+			
 			// jquery alert
 			'utils': 'lib/utils',
 
 			'mod': 'mod/backbone'
+		},
+
+/*
+		shim: {
+			'bootstrap': {
+				deps: ['jquery'],
+				exports: 'bootstrap'
+			}
 		}
+*/
 //		locale: 'de-de'
 	});
 	
@@ -35,9 +46,10 @@
 		['domReady!', 'jquery', '<?php echo isset($this->jsMain)?$this->jsMain:'main'?>'],
 		function(doc, $, app) {
 			$(doc).data('baseUrl', '<?php echo $this->baseUrl ?>');
-			$(doc).data('APPLICATION_ENV', '<?php echo APPLICATION_ENV ?>');
-			
-			app.run();
+			$(doc).data('appEnv', '<?php echo APPLICATION_ENV ?>');
+
+			if (typeof(app.run) != 'undefined')
+				app.run();
 		}
 	);
 	

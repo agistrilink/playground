@@ -9,7 +9,8 @@ requirejs 2.1.1 +
 jquery 1.9.1 +
 jquery ui 1.10.2-amd +
 backbone 1.0.0-amd +
-underscore 1.4.4-amd
+underscore 1.4.4-amd +
+bootstrap 2.1.3
 
 zend 1.12.3, simply the latest at 201304
 
@@ -20,5 +21,8 @@ jquery 1.9.1, latest at 201304 - already amd'ed in release
 jquery ui 1.10.2-amd, latest at 201304, based on see https://github.com/jrburke/jqueryui-amd/tree/latest
 
 backbone 1.0.0-amd +
-underscore 1.4.4-amd, amd'ed myself in 201304
+underscore 1.4.4-amd +
+bootstrap 2.1.3, amd'ed myself in 201304
+
+Have to break down bootstrap still a bit further in individual js files
 
